@@ -4,7 +4,7 @@ This project sets up a lightweight **Model Context Protocol (MCP)** server using
 ## **📦 Prerequisites**
 Install uv if not already installed:
 ```
-curl -Ls https://astro.build/install | bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 ## 🛠️ Add Your Server
 Create a server.py file with your tool definitions. Here’s an example:
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     mcp.run("stdio")
 ```
 ## 🧪 Interact with the Server in the Terminal
-
+No need for a uv init, the pyproject.toml pulls in the dependencies with versioning to make execution per below easy.
 ### List Available Tools
 ```
 uv run cmcp 'mcp run server.py' tools/list
