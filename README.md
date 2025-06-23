@@ -1,19 +1,14 @@
-🧠 MCP Server Demo (uv, cmcp, mcp[cli])
+# 🧠 MCP Server Demo 
 
-This project sets up a lightweight Model Context Protocol (MCP) server using uv and pixi, and enables JSON-RPC tool calls via the cmcp CLI.
-
-⸻
-
-📦 Prerequisites
-Ensure the following are installed:
-	•	uv
-
-⸻
-
-🛠️ Add Your Server
-
-Create server.py with your tool definitions. Example tool:
-
+This project sets up a lightweight **Model Context Protocol (MCP)** server using uv, enabling JSON-RPC tool calls via the cmcp CLI.
+## **📦 Prerequisites**
+Install uv if not already installed:
+```
+curl -Ls https://astro.build/install | bash
+```
+## 🛠️ Add Your Server
+Create a server.py file with your tool definitions. Here’s an example:
+```
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("demo")
@@ -24,13 +19,14 @@ def add(a: int, b: int) -> int:
 
 if __name__ == "__main__":
     mcp.run("stdio")
+```
+## 🧪 Interact with the Server in the Terminal
 
-⸻
-
-🧪 Interact with the Server
-
-List tools:
+### List Available Tools
+```
 uv run cmcp 'mcp run server.py' tools/list
-
-Call a tool (example: add):
+```
+### Call a Tool 
+```
 uv run cmcp 'mcp run server.py' tools/call name=add arguments:='{"a": 1, "b": 2}'
+```
